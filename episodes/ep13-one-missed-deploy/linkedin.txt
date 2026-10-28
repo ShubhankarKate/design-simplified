@@ -1,0 +1,13 @@
+One server missed a deploy. Over $460 million was gone in 45 minutes.
+
+Knight Capital, 1 August 2012 (from the SEC's 2013 order):
+- New code went to 8 servers; 1 was skipped and nobody checked
+- The new code reused an old flag, which woke dead code on the skipped server
+- 212 orders became over 4 million trades
+- Rolling back the 7 good servers made it worse: the old code then ran on all 8
+
+The deploy-safety lessons interviewers look for: verify every server's version before go-live, delete dead code, keep a kill switch.
+
+Your call: should that kill switch be automatic, or a human's decision? A or B?
+
+#systemdesign #devops #softwareengineering

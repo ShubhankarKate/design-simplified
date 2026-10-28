@@ -1,0 +1,13 @@
+143,199 posts in one second. How does an app find the top 10 trending words without counting every one?
+
+Top-K heavy hitters is a common system design interview question. The compact answer:
+- A Count-Min sketch: 5 rows of 2,719 counters, about 54 KB in total
+- Each word hashes to one counter per row and adds 1
+- A word's count is the smallest of its 5 counters, so it can overcount but never undercount
+- A heap keeps the current top 10
+
+Your trending list is a very good estimate, not an exact count.
+
+Your call: should trending mean the biggest count all day, or the fastest rise in the last hour? A or B?
+
+#systemdesign #datastructures #backend

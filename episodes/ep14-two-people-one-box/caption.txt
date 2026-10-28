@@ -1,0 +1,18 @@
+You and a teammate drag the same box in a shared design file. Whose drag wins, and why doesn't the editor merge them?
+
+Design Simplified · 14: how Figma decides whose edit wins without a fancy merge algorithm, and the real-time collaboration question interviews ask.
+
+- Figma skipped OT as too complex; its design borrows from CRDTs but keeps one central server.
+- Each file gets 1 server process; the server decides, and every edit goes through it.
+- The file is just rows: box · property · value.
+- Same property, same box: last write wins. You set x = 300, your teammate x = 700, the box lands on 700.
+- Different properties (colour vs position) don't conflict: both stick.
+- Layer order is a fraction 0–1: between 0.2 and 0.4, a new layer gets 0.3, so nothing else is renumbered.
+
+Collaborative editing is a common system design interview question, and the real-time sync answer here is simpler than most people expect.
+
+Simplified from Figma's 2019 engineering post. Drag and layer values are illustrative.
+
+You edited offline for an hour. A) your edits overwrite theirs, or B) theirs win? Comment A or B 👇
+
+#systemdesign #systemdesigninterview #softwareengineering #realtime #distributedsystems

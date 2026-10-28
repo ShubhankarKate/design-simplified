@@ -1,0 +1,18 @@
+143,199 posts in one second: how does an app find the top 10 trending words without counting every one?
+
+Design Simplified · 15: how a trending list finds the top 10 words in a flood of posts without counting every word, and the top-K heavy hitters question interviews ask.
+
+- Counting every word exactly on one server breaks: Twitter's record is 143,199 posts in one second (2013).
+- Keep a tiny grid instead: 5 rows of 2,719 counters (a Count-Min sketch).
+- Each word hashes to one counter per row, and each gets +1.
+- To read a word's count, take the smallest of its 5 counters. Collisions only push counts up, so it never undercounts.
+- Keep a heap of the top 10; a word that beats the smallest gets swapped in.
+- The whole grid is ≈ 54 KB.
+
+Finding the top 10 trending words, also called top-K heavy hitters, is a system design interview question, and the Count-Min sketch answer fits in kilobytes.
+
+Standard interview design, not Twitter's actual system.
+
+What should "trending" mean? A) biggest count all day, or B) fastest rise in the last hour? Comment A or B 👇
+
+#systemdesign #systemdesigninterview #softwareengineering #datastructures #backend

@@ -1,0 +1,17 @@
+Your live score froze in the last over, 6 to win. Why does one expired cache key do that?
+Design Simplified · 11: the thundering herd, told through one cricket score.
+
+- Every phone reads the score from one cache key. When it expires, every request misses at once.
+- What if 10,000 requests a second miss, and a refill takes 200 ms? That's 2,000 copies of one query on the database.
+- Keeping the key longer doesn't fix it. It still expires, just later.
+- Fix 1: the first miss gets a lease (a 64-bit token) and is the only one that refills the key.
+- Fix 2: everyone else waits a few milliseconds and reads the fresh value.
+- Fix 3: one lease per key every 10 seconds. Facebook measured peak database queries falling from 17,000 a second to 1,300.
+- Twist: nobody has to wait. Serve the old score marked stale while the refill runs.
+
+This cache stampede question comes up in system design interview rounds on caching and hot keys.
+Standard interview design, not any score app's actual system. Lease numbers from Facebook's own paper, Scaling Memcache at Facebook (NSDI 2013).
+
+Last over, the score cache just expired. A) show the stale score, or B) show a spinner? Comment A or B 👇
+
+#systemdesign #systemdesigninterview #caching #thunderingherd #backendengineering

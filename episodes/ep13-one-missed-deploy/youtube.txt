@@ -1,0 +1,29 @@
+TITLE (max 100 chars)
+1 server missed the deploy: $460M gone | Deployment safety | System Design #13
+
+DESCRIPTION
+One server missed a deploy. How did that lose over $460 million in 45 minutes?
+
+Design Simplified · 13: the deploy that lost Knight Capital over $460M, and the deploy-safety question interviews ask.
+
+- New code went to 8 servers; 1 server got skipped and nobody checked (no second review).
+- The new code reused an old flag. On the skipped server it woke Power Peg (unused order-routing code), dead since 2003.
+- Power Peg never knew an order was done, so 212 orders became over 4 million trades: ≈ 19,000 per order.
+- The fix made it worse: rolling back the 7 good servers let Power Peg fire on all 8.
+- Loss: over $460M in 45 minutes, ≈ $10M a minute.
+- Takeaway: check every server's version before go-live, delete dead code, keep a kill switch.
+
+SEC Release No. 34-70694. Simplified from the SEC's 2013 order on Knight Capital.
+
+Your deploy's kill switch: A) automatic, or B) a human's call? Comment A or B 👇
+
+Instagram: @design_simplified.ai
+
+#systemdesign #systemdesigninterview #shorts
+
+SETTINGS
+Audience: No, it's not made for kids
+Visibility: Public
+
+THUMBNAIL
+YouTube app: Edit → thumbnail → frame 0:00 or upload youtube-cover.png

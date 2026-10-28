@@ -1,0 +1,1 @@
+A = deliver it late (TTL keeps it) · B = drop it (short TTL). What would you set?

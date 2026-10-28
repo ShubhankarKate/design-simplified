@@ -1,0 +1,14 @@
+You and a teammate drag the same box in a shared design file. Whose drag wins?
+
+Figma's answer (from its 2019 engineering post) is simpler than most people expect:
+- One server process per file decides every edit
+- The file is just rows: box, property, value
+- Same property, same box: last write wins
+- Different properties (colour vs position) both stick
+- Layer order is a fraction between 0 and 1, so inserting a layer never renumbers the others
+
+No heavy merge algorithm needed for this case. That's a strong answer in a real-time collaboration interview round.
+
+Your call: you edited offline for an hour. Should your edits overwrite theirs? A or B?
+
+#systemdesign #distributedsystems #softwareengineering

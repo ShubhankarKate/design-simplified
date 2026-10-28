@@ -1,0 +1,11 @@
+{
+  "updated": "2026-10-29",
+  "posted": ["ep01", "ep02", "ep03", "ep04", "ep05", "ep06", "ep07", "ep08", "ep09", "ep10"],
+  "ready": [
+    {"id": "ep11", "folder": "episodes/ep11-cache-key-last-over", "status": "ready"},
+    {"id": "ep12", "folder": "episodes/ep12-1-crore-push-alerts", "status": "ready"},
+    {"id": "ep13", "folder": "episodes/ep13-one-missed-deploy", "status": "ready"},
+    {"id": "ep14", "folder": "episodes/ep14-two-people-one-box", "status": "ready"},
+    {"id": "ep15", "folder": "episodes/ep15-top-10-trending-words", "status": "ready"}
+  ]
+}

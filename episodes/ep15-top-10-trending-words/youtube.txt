@@ -1,0 +1,29 @@
+TITLE (max 100 chars)
+Your top 10 trends are guessed | Count-Min Sketch | System Design #15
+
+DESCRIPTION
+143,199 posts in one second: how does an app find the top 10 trending words without counting every one?
+
+Design Simplified · 15: how a trending list finds the top 10 words in a flood of posts without counting every word, and the top-K heavy hitters question interviews ask.
+
+- Counting every word exactly on one server breaks: Twitter's record is 143,199 posts in one second (2013).
+- Keep a tiny grid instead: 5 rows of 2,719 counters (a Count-Min sketch).
+- Each word hashes to one counter per row, and each gets +1.
+- To read a word's count, take the smallest of its 5 counters. Collisions only push counts up, so it never undercounts.
+- Keep a heap of the top 10; a word that beats the smallest gets swapped in.
+- The whole grid is ≈ 54 KB.
+
+Sources: Cormode & Muthukrishnan, 'An Improved Data Stream Summary: The Count-Min Sketch and its Applications'; Twitter Engineering, 'New Tweets per second record, and how!' (2013). Standard interview design, not Twitter's actual system.
+
+What should "trending" mean? A) biggest count all day, or B) fastest rise in the last hour? Comment A or B 👇
+
+Instagram: @design_simplified.ai
+
+#systemdesign #systemdesigninterview #shorts
+
+SETTINGS
+Audience: No, it's not made for kids
+Visibility: Public
+
+THUMBNAIL
+YouTube app: Edit → thumbnail → frame 0:00 or upload youtube-cover.png

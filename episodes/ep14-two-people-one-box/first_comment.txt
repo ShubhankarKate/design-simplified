@@ -1,0 +1,1 @@
+A = offline edits overwrite (last write wins) · B = live edits win. Which is fairer for a shared design file?

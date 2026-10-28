@@ -1,0 +1,14 @@
+Your live score froze in the last over. 6 to win. Why?
+
+One expired cache key.
+
+Every phone reads the score from the same key. When it expires, every request misses at the same moment and goes to the database. At 10,000 requests a second and a 200 ms refill, that's about 2,000 copies of one query.
+
+How Facebook handled it (Scaling Memcache, NSDI 2013):
+- The first miss gets a lease and is the only one allowed to refill the key
+- Everyone else waits a few milliseconds and reads the fresh value
+- Peak database queries for hot keys fell from 17,000 a second to 1,300
+
+Interview question: last over, cache expired. Do you show the stale score or a spinner? A or B?
+
+#systemdesign #caching #backend
