@@ -11,14 +11,10 @@
     "ep08",
     "ep09",
     "ep10",
-    "ep11"
+    "ep11",
+    "ep12"
   ],
   "ready": [
-    {
-      "id": "ep12",
-      "folder": "episodes/ep12-1-crore-push-alerts",
-      "status": "ready"
-    },
     {
       "id": "ep13",
       "folder": "episodes/ep13-one-missed-deploy",
