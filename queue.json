@@ -12,14 +12,10 @@
     "ep09",
     "ep10",
     "ep11",
-    "ep12"
+    "ep12",
+    "ep13"
   ],
   "ready": [
-    {
-      "id": "ep13",
-      "folder": "episodes/ep13-one-missed-deploy",
-      "status": "ready"
-    },
     {
       "id": "ep14",
       "folder": "episodes/ep14-two-people-one-box",
