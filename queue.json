@@ -13,14 +13,10 @@
     "ep10",
     "ep11",
     "ep12",
-    "ep13"
+    "ep13",
+    "ep14"
   ],
   "ready": [
-    {
-      "id": "ep14",
-      "folder": "episodes/ep14-two-people-one-box",
-      "status": "ready"
-    },
     {
       "id": "ep15",
       "folder": "episodes/ep15-top-10-trending-words",
