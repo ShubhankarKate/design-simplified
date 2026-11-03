@@ -14,13 +14,8 @@
     "ep11",
     "ep12",
     "ep13",
-    "ep14"
+    "ep14",
+    "ep15"
   ],
-  "ready": [
-    {
-      "id": "ep15",
-      "folder": "episodes/ep15-top-10-trending-words",
-      "status": "ready"
-    }
-  ]
+  "ready": []
 }
